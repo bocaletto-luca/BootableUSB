@@ -1,6 +1,5 @@
 # Software Name: Bootable USB
 # Author: Luca Bocaletto
-# Website: https://www.elektronoide.it
 
 import tkinter as tk
 from tkinter import filedialog
