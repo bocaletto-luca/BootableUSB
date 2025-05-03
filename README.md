@@ -44,6 +44,3 @@ Here's how it works:
 Please note that you should have the necessary privileges to format the USB drive.
 
 *Disclaimer: Be cautious when using this script, as it may modify your storage devices. Ensure that you have a backup of important data on your USB drives before creating a bootable USB.*
-Per ulteriori informazioni, problemi o contributi, visita il [repository](https://github.com/elektronoide/bootable-usb-creator) del progetto.
-
-*Nota: Si prega di fare attenzione nell'utilizzo di questo script, poiché potrebbe modificare i dispositivi di archiviazione. Assicurarsi di disporre di un backup dei dati importanti sulle unità USB prima di creare un'unità USB avviabile.*
