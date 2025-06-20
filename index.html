@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootable USB Creator – Bocaletto Luca</title>
+  <meta name="description" content="Bootable USB Creator is a Python GUI tool to build bootable USB drives from ISO files, with auto-detect, validation, formatting and copying.">
+  <meta name="keywords" content="bootable USB, ISO to USB, Python, GUI, FAT32, drive formatter, WMI, Win32, cross-platform">
+  <meta name="author" content="Bocaletto Luca">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://github.com/bocaletto-luca/BootableUSB">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bootable USB Creator – Bocaletto Luca">
+  <meta property="og:description" content="Create bootable USB drives from ISO files with automatic detection, validation and formatting in a Python GUI.">
+  <meta property="og:url" content="https://github.com/bocaletto-luca/BootableUSB">
+  <meta property="og:site_name" content="Bootable USB Creator">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bootable USB Creator – Bocaletto Luca">
+  <meta name="twitter:description" content="Python app for crafting bootable USB drives from ISO images, featuring drive validation, FAT32 formatting & file copying.">
+
+  <!-- GitHub Markdown Styling -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"
+        integrity="sha512-1tV2HpYPXDWZ2U8dGBwS3OWg0doP+2hT0f5Sm5aUnRpxYgiK7g+K1/L0N0o+7vL8VtPrTzZgr9wKbI6mJRwrDw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #f6f8fa;
+      color: #24292e;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 { margin-top: 0; font-size: 2rem; }
+    h2 { margin-top: 2rem; font-size: 1.5rem; }
+    p, ul, ol { margin-bottom: 1rem; }
+    ul, ol { padding-left: 1.2rem; }
+    pre {
+      background: #f0f0f0;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    code {
+      background: #f0f0f0;
+      padding: .2rem .4rem;
+      border-radius: 4px;
+      font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    }
+    img.screenshot {
+      display: block;
+      max-width: 100%;
+      margin: 1rem 0;
+      border: 1px solid #e1e4e8;
+      border-radius: 4px;
+    }
+    a { color: #0366d6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      body { padding: .5rem; }
+      .container { padding: 1rem; }
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e1e4e8;
+      text-align: center;
+      font-size: .9rem;
+      color: #57606a;
+    }
+    footer a { margin: 0 .5rem; color: inherit; }
+  </style>
+</head>
+
+<body class="markdown-body">
+  <div class="container">
+    <h1>Bootable USB Creator</h1>
+    <p><em>A Python GUI application to make bootable USB drives from ISO files, featuring auto-detection, validation, FAT32 formatting, and content copying.</em></p>
+
+    <p><strong>Author:</strong> Bocaletto Luca</p>
+    <p><strong>Source:</strong> <a href="https://github.com/bocaletto-luca/BootableUSB">GitHub Repository</a></p>
+
+    <h2>Features</h2>
+    <ul>
+      <li><strong>Select ISO File:</strong> Browse and choose an ISO image to deploy.</li>
+      <li><strong>Automatic USB Detection:</strong> Lists all connected removable drives.</li>
+      <li><strong>Drive Validation:</strong> Ensures the selected device is a valid USB drive.</li>
+      <li><strong>FAT32 Formatting:</strong> Formats the USB drive with FAT32 before writing.</li>
+      <li><strong>ISO Copy:</strong> Copies ISO contents to the drive using reliable system commands.</li>
+    </ul>
+
+    <h2>Prerequisites</h2>
+    <ul>
+      <li>Python 3.x installed</li>
+      <li><code>tkinter</code> (standard library) for GUI</li>
+      <li><code>pywin32</code> packages (<code>win32file</code>, <code>win32com.client</code>) on Windows</li>
+      <li>Administrator privileges on Windows to format drives</li>
+    </ul>
+
+    <h2>Installation</h2>
+    <pre><code class="language-bash"># Clone the repository
+git clone https://github.com/bocaletto-luca/BootableUSB.git
+cd BootableUSB
+
+# (Windows) install pywin32
+pip install pywin32
+</code></pre>
+
+    <h2>Usage</h2>
+    <ol>
+      <li>Run the script:
+        <pre><code>python BootableUSB.py</code></pre>
+      </li>
+      <li>Click "Browse" to select an ISO file.</li>
+      <li>Choose your USB drive from the dropdown list.</li>
+      <li>Click "Create Bootable USB Drive" to format and write.</li>
+      <li>Wait for completion and confirmation message.</li>
+    </ol>
+
+    <h2>How It Works</h2>
+    <p>This tool uses Windows Management Instrumentation (WMI) and Win32 API calls to detect and validate USB drives. It formats the selected drive with FAT32 and then executes a file copy of the ISO contents, ensuring a bootable USB is created.</p>
+    <p><strong>Warning:</strong> Formatting will erase all data on the selected drive. Back up important files before proceeding.</p>
+
+    <h2>Screenshots</h2>
+    <!-- Replace with your hosted image URLs -->
+    <img class="screenshot" src="PATH_TO_SCREENSHOT_1.png" alt="Bootable USB Creator main window">
+    <img class="screenshot" src="PATH_TO_SCREENSHOT_2.png" alt="ISO selection and drive list">
+
+    <footer>
+      <p>© 2025 Bocaletto Luca</p>
+      <p>
+        <a href="https://bocaletto-luca.github.io">bocaletto-luca.github.io</a> |
+        <a href="https://bocalettoluca.altervista.org">bocalettoluca.altervista.org</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
