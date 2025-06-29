@@ -44,3 +44,11 @@ Here's how it works:
 Please note that you should have the necessary privileges to format the USB drive.
 
 *Disclaimer: Be cautious when using this script, as it may modify your storage devices. Ensure that you have a backup of important data on your USB drives before creating a bootable USB.*
+
+---
+
+**Maintainer Update**
+
+All legacy projects from the old `@Elektronoide` GitHub account are now officially maintained by **@bocaletto-luca**. Please direct any issues, pull requests, and stars to **@bocaletto-luca** for all future updates.
+
+---
